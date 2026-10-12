@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+.env
+ml/data/
+ml/exported_model/
+ml/logs/
+ml/results/
+frontend/dist/

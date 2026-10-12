@@ -1,0 +1,84 @@
+/*
+  DESIGN TOKENS
+  -------------
+  Palette is not decorative — every disease accent color matches the actual
+  lesion color described in the research proposal (Section 1.2):
+    - Common Rust      -> orange-brown pustules  -> --color-rust
+    - Northern Blight  -> tan/cigar-coloured lesions -> --color-blight
+    - Grey Leaf Spot   -> buff-to-grey lesions    -> --color-spot
+    - Healthy          -> leaf green              -> --color-leaf
+  A farmer who learns the app's color-coding is also learning the real
+  visual identification cues — the UI reinforces the diagnostic skill.
+
+  Background is a pale, leaf-tinted off-white (not warm cream) chosen for
+  outdoor daylight legibility: light backgrounds with strong dark text
+  hold up far better in direct sun than dark UI, which glares on phone
+  screens outdoors.
+
+  Type uses the system font stack only — no webfont requests. This app
+  is used in areas where mobile data is a real cost (see RURA coverage
+  discussion in the proposal); shipping zero font bytes is a deliberate
+  choice, not an oversight. A monospace stack is reserved for numeric
+  confidence readouts, echoing a handheld instrument's digital display.
+*/
+
+:root {
+  /* ---- Core palette ---- */
+  --color-bg: #F1F4EC;           /* pale leaf-tinted parchment */
+  --color-surface: #FFFFFF;      /* elevated cards */
+  --color-surface-sunken: #E7EBDD; /* wells, inputs, disabled */
+  --color-ink: #202B18;          /* primary text — deep leaf-black */
+  --color-ink-soft: #56604A;     /* secondary text */
+  --color-border: #D3D9C6;
+
+  --color-leaf: #3F6B2B;         /* brand / healthy */
+  --color-leaf-dark: #2C4D1D;
+  --color-grain: #D9A62E;        /* primary CTA — maize kernel gold */
+  --color-grain-dark: #B3860F;
+
+  --color-rust: #B5541F;         /* Common Rust */
+  --color-blight: #8C6A3F;       /* Northern Leaf Blight */
+  --color-spot: #6E6455;         /* Grey Leaf Spot */
+
+  --color-danger: #A6341A;
+  --color-focus: #1E5FBF;
+
+  /* ---- Type ---- */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(32, 43, 24, 0.06), 0 4px 16px rgba(32, 43, 24, 0.08);
+  --shadow-float: 0 8px 24px rgba(32, 43, 24, 0.16);
+
+  --max-width: 480px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* App is intentionally single-theme (outdoor daylight legibility is the
+     priority use case) — we only soften pure white slightly so an
+     accidental dark-mode browser override doesn't blow out contrast. */
+  :root {
+    --color-surface: #FEFEFC;
+  }
+}
