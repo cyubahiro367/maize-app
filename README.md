@@ -22,3 +22,10 @@ maize-app/
 1. Collect + organize your dataset into `ml/data/<class_name>/*.jpg`
 2. Train in `ml/` (Docker or local Python) → produces `ml/exported_model/`
 3. `docker compose up` — backend picks up the exported model automatically, frontend talks to backend, Postgres holds the bilingual knowledge base
+
+## Local-only assets (not in Git)
+
+Image files are intentionally excluded from this repository (see `.gitignore`).
+
+- **PWA icons:** place `icon-192.png` and `icon-512.png` in `frontend/public/icons/` (see `frontend/vite.config.js`).
+- **Training images:** keep raw datasets on your machine or external storage; use `ml/data/<class_name>/` for the organized layout the training scripts expect.
