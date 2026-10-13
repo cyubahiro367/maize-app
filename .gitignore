@@ -7,3 +7,17 @@ ml/exported_model/
 ml/logs/
 ml/results/
 frontend/dist/
+
+# Images (never commit)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.bmp
+*.tif
+*.tiff
+*.ico
+*.avif
+*.svg
+ml/raw_data/
